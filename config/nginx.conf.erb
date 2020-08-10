@@ -32,6 +32,21 @@ http {
 			sub_filter 'apis.google.com' 'googpxy.herokuapp.com/proxy_apis_google_com';
 			sub_filter 'ogs.google.com' 'googpxy.herokuapp.com/proxy_ogs_google_com';
 			sub_filter 'id.google.com' 'googpxy.herokuapp.com/proxy_id_google_com';
+			sub_filter 'www.gstatic.com' 'googpxy.herokuapp.com/proxy_www_gstatic_com';
+		}
+
+                location /proxy_www_gstatic_com {
+                        proxy_set_header Accept-Encoding "";
+			proxy_pass https://www.gstatic.com/;
+                        proxy_hide_header Set-Cookie;
+			proxy_http_version 1.1;
+			proxy_buffering off;
+                        sub_filter_types *;
+                        sub_filter_once off;
+			sub_filter 'apis.google.com' 'googpxy.herokuapp.com/proxy_apis_google_com';
+			sub_filter 'ogs.google.com' 'googpxy.herokuapp.com/proxy_ogs_google_com';
+			sub_filter 'id.google.com' 'googpxy.herokuapp.com/proxy_id_google_com';
+			sub_filter 'www.gstatic.com' 'googpxy.herokuapp.com/proxy_www_gstatic_com';
 		}
 
                 location /proxy_apis_google_com {
@@ -40,6 +55,12 @@ http {
                         proxy_hide_header Set-Cookie;
 			proxy_http_version 1.1;
 			proxy_buffering off;
+                        sub_filter_types *;
+                        sub_filter_once off;
+			sub_filter 'apis.google.com' 'googpxy.herokuapp.com/proxy_apis_google_com';
+			sub_filter 'ogs.google.com' 'googpxy.herokuapp.com/proxy_ogs_google_com';
+			sub_filter 'id.google.com' 'googpxy.herokuapp.com/proxy_id_google_com';
+			sub_filter 'www.gstatic.com' 'googpxy.herokuapp.com/proxy_www_gstatic_com';
 		}
 
                 location /proxy_ogs_google_com {
@@ -48,6 +69,12 @@ http {
                         proxy_hide_header Set-Cookie;
 			proxy_http_version 1.1;
 			proxy_buffering off;
+                        sub_filter_types *;
+                        sub_filter_once off;
+			sub_filter 'apis.google.com' 'googpxy.herokuapp.com/proxy_apis_google_com';
+			sub_filter 'ogs.google.com' 'googpxy.herokuapp.com/proxy_ogs_google_com';
+			sub_filter 'id.google.com' 'googpxy.herokuapp.com/proxy_id_google_com';
+			sub_filter 'www.gstatic.com' 'googpxy.herokuapp.com/proxy_www_gstatic_com';
 		}
 
                 location /proxy_id_google_com {
@@ -56,6 +83,12 @@ http {
                         proxy_hide_header Set-Cookie;
 			proxy_http_version 1.1;
 			proxy_buffering off;
+                        sub_filter_types *;
+                        sub_filter_once off;
+			sub_filter 'apis.google.com' 'googpxy.herokuapp.com/proxy_apis_google_com';
+			sub_filter 'ogs.google.com' 'googpxy.herokuapp.com/proxy_ogs_google_com';
+			sub_filter 'id.google.com' 'googpxy.herokuapp.com/proxy_id_google_com';
+			sub_filter 'www.gstatic.com' 'googpxy.herokuapp.com/proxy_www_gstatic_com';
 		}
 	}
 }
