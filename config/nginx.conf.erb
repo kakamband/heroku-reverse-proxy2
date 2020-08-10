@@ -28,9 +28,30 @@ http {
 			proxy_buffering off;
                         sub_filter_types *;
                         sub_filter_once off;
-			sub_filter 'apis.google.com' 'unipxy.herokuapp.com/proxy/https://apis.google.com';
-			sub_filter 'ogs.google.com' 'unipxy.herokuapp.com/proxy/https://ogs.google.com';
-			sub_filter 'id.google.com' 'unipxy.herokuapp.com/proxy/https://id.google.com';
+			sub_filter 'apis.google.com' 'googpxy.herokuapp.com/proxy_apis_google_com';
+			sub_filter 'ogs.google.com' 'googpxy.herokuapp.com/proxy_ogs_google_com';
+			sub_filter 'id.google.com' 'googpxy.herokuapp.com/proxy_id_google_com';
+		}
+
+                location /proxy_apis_google_com {
+                        proxy_set_header Accept-Encoding "";
+			proxy_pass https://apis.google.com/;
+			proxy_http_version 1.1;
+			proxy_buffering off;
+		}
+
+                location /proxy_ogs_google_com {
+                        proxy_set_header Accept-Encoding "";
+			proxy_pass https://ogs.google.com/;
+			proxy_http_version 1.1;
+			proxy_buffering off;
+		}
+
+                location /proxy_id_google_com {
+                        proxy_set_header Accept-Encoding "";
+			proxy_pass https://id.google.com/;
+			proxy_http_version 1.1;
+			proxy_buffering off;
 		}
 	}
 }
