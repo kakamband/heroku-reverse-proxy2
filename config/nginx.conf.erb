@@ -38,6 +38,7 @@ http {
 			proxy_http_version 1.1;
 			proxy_buffering off;
                         sub_filter_types *;
+                        sub_filter Google Baidu;
 			sub_filter apis.google.com unipxy.herokuapp.com/proxy/https://apis.google.com;
 			sub_filter ogs.google.com unipxy.herokuapp.com/proxy/https://ogs.google.com;
 			sub_filter id.google.com unipxy.herokuapp.com/proxy/https://id.google.com;
