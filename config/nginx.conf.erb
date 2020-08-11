@@ -39,6 +39,8 @@ http {
 			sub_filter 'id.google.com' 'googpxy.herokuapp.com/proxy_id_google_com';
 			sub_filter 'www.gstatic.com' 'googpxy.herokuapp.com/proxy_www_gstatic_com';
 			sub_filter 'play.google.com' 'googpxy.herokuapp.com/proxy_play_google_com';
+			sub_filter 'zh.wikipedia.org' 'unipxy.herokuapp.com/proxy/https://zh.wikipedia.org';
+			sub_filter 'en.wikipedia.org' 'unipxy.herokuapp.com/proxy/https://en.wikipedia.org';
 		}
 
                 location /proxy_play_google_com/ {
