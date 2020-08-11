@@ -87,7 +87,7 @@ http {
 		}
 
                 location /proxy_ogs_google_com/ {
-                        rewrite googpxy.herokuapp.com www.google.com break;
+                        rewrite googpxy.herokuapp.com www.google.com permanent;
                         proxy_set_header Accept-Encoding "";
 			proxy_pass https://ogs.google.com/;
                         proxy_hide_header Set-Cookie;
