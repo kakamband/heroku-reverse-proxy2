@@ -28,7 +28,7 @@ http {
 		location / {
                         proxy_set_header Accept-Encoding "";
 			proxy_pass https://www.google.com/;
-                        proxy_hide_header Set-Cookie;
+                        proxy_cookie_domain www.google.com googpxy.herokuapp.com;
 			proxy_http_version 1.1;
 			proxy_buffering off;
                         sub_filter_types *;
@@ -41,7 +41,7 @@ http {
 			sub_filter 'play.google.com' 'googpxy.herokuapp.com/proxy_play_google_com';
 		}
 
-                location /proxy_play_google_com {
+                location /proxy_play_google_com/ {
                         proxy_set_header Accept-Encoding "";
 			proxy_pass https://play.google.com/;
                         proxy_hide_header Set-Cookie;
@@ -56,7 +56,7 @@ http {
 			sub_filter 'play.google.com' 'googpxy.herokuapp.com/proxy_play_google_com';
 		}
 
-                location /proxy_www_gstatic_com {
+                location /proxy_www_gstatic_com/ {
                         proxy_set_header Accept-Encoding "";
 			proxy_pass https://www.gstatic.com/;
                         proxy_hide_header Set-Cookie;
@@ -71,7 +71,7 @@ http {
 			sub_filter 'play.google.com' 'googpxy.herokuapp.com/proxy_play_google_com';
 		}
 
-                location /proxy_apis_google_com {
+                location /proxy_apis_google_com/ {
                         proxy_set_header Accept-Encoding "";
 			proxy_pass https://apis.google.com/;
                         proxy_hide_header Set-Cookie;
@@ -86,7 +86,7 @@ http {
 			sub_filter 'play.google.com' 'googpxy.herokuapp.com/proxy_play_google_com';
 		}
 
-                location /proxy_ogs_google_com {
+                location /proxy_ogs_google_com/ {
                         proxy_set_header Accept-Encoding "";
 			proxy_pass https://ogs.google.com/;
                         proxy_hide_header Set-Cookie;
@@ -101,7 +101,7 @@ http {
 			sub_filter 'play.google.com' 'googpxy.herokuapp.com/proxy_play_google_com';
 		}
 
-                location /proxy_id_google_com {
+                location /proxy_id_google_com/ {
                         proxy_set_header Accept-Encoding "";
 			proxy_pass https://id.google.com/;
                         proxy_hide_header Set-Cookie;
