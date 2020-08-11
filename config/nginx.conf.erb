@@ -87,9 +87,13 @@ http {
 		}
 
                 location /proxy_ogs_google_com/ {
-                        rewrite (.*)googpxy.herokuapp.com(.*) $1www.google.com$2 permanent;
+                        if ($args ~* (.*)(googpxy.herokuapp.com)(.*)) {
+                            set $args $1www.google.com$3;
+                            rewrite ^.*$ $1 redirect;
+                        }
+
                         proxy_set_header Accept-Encoding "";
-			proxy_pass https://ogs.google.com/;
+			proxy_pass https://ogs.google.com/$uri$is_args$args;
                         proxy_hide_header Set-Cookie;
 			proxy_http_version 1.1;
 			proxy_buffering off;
