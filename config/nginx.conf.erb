@@ -33,6 +33,7 @@ http {
 			proxy_buffering off;
                         sub_filter_types *;
                         sub_filter_once off;
+			sub_filter 'www.google.com' 'googpxy.herokuapp.com';
 			sub_filter 'apis.google.com' 'googpxy.herokuapp.com/proxy_apis_google_com';
 			sub_filter 'ogs.google.com' 'googpxy.herokuapp.com/proxy_ogs_google_com';
 			sub_filter 'id.google.com' 'googpxy.herokuapp.com/proxy_id_google_com';
