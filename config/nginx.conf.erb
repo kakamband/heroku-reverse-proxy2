@@ -93,7 +93,7 @@ http {
                         }
 
                         proxy_set_header Accept-Encoding "";
-			proxy_pass https://ogs.google.com/$uri$is_args$args;
+			proxy_pass https://ogs.google.com/;
                         proxy_hide_header Set-Cookie;
 			proxy_http_version 1.1;
 			proxy_buffering off;
