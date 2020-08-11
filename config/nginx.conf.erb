@@ -20,6 +20,10 @@ http {
   server {
 		listen <%= ENV["PORT"] %>;
 		keepalive_timeout 5;
+            
+                location /compressiontest/gzip.html {
+                        return 403;
+                }
 
 		location / {
                         proxy_set_header Accept-Encoding "";
