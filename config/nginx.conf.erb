@@ -41,6 +41,10 @@ http {
 			sub_filter 'play.google.com' 'googpxy.herokuapp.com/proxy_play_google_com';
 			sub_filter 'zh.wikipedia.org' 'unipxy.herokuapp.com/proxy/https://zh.wikipedia.org';
 			sub_filter 'en.wikipedia.org' 'unipxy.herokuapp.com/proxy/https://en.wikipedia.org';
+			sub_filter 'encrypted-tbn0.gstatic.com' 'googpxy.herokuapp.com/proxy_encrypted-tbn0_gstatic_com';
+			sub_filter 'encrypted-tbn1.gstatic.com' 'googpxy.herokuapp.com/proxy_encrypted-tbn1_gstatic_com';
+			sub_filter 'encrypted-tbn2.gstatic.com' 'googpxy.herokuapp.com/proxy_encrypted-tbn2_gstatic_com';
+			sub_filter 'encrypted-tbn3.gstatic.com' 'googpxy.herokuapp.com/proxy_encrypted-tbn3_gstatic_com';
 		}
 
                 location /proxy_play_google_com/ {
@@ -71,6 +75,45 @@ http {
 			sub_filter 'id.google.com' 'googpxy.herokuapp.com/proxy_id_google_com';
 			sub_filter 'www.gstatic.com' 'googpxy.herokuapp.com/proxy_www_gstatic_com';
 			sub_filter 'play.google.com' 'googpxy.herokuapp.com/proxy_play_google_com';
+			sub_filter 'encrypted-tbn0.gstatic.com' 'googpxy.herokuapp.com/proxy_encrypted-tbn0_gstatic_com';
+			sub_filter 'encrypted-tbn1.gstatic.com' 'googpxy.herokuapp.com/proxy_encrypted-tbn1_gstatic_com';
+			sub_filter 'encrypted-tbn2.gstatic.com' 'googpxy.herokuapp.com/proxy_encrypted-tbn2_gstatic_com';
+			sub_filter 'encrypted-tbn3.gstatic.com' 'googpxy.herokuapp.com/proxy_encrypted-tbn3_gstatic_com';
+		}
+
+                location /proxy_encrypted-tbn0_gstatic_com/ {
+                        proxy_set_header Accept-Encoding "";
+			proxy_pass https://encrypted-tbn0.gstatic.com/;
+                        proxy_hide_header Set-Cookie;
+			proxy_http_version 1.1;
+			proxy_buffering off;
+		}
+
+
+                location /proxy_encrypted-tbn1_gstatic_com/ {
+                        proxy_set_header Accept-Encoding "";
+			proxy_pass https://encrypted-tbn1.gstatic.com/;
+                        proxy_hide_header Set-Cookie;
+			proxy_http_version 1.1;
+			proxy_buffering off;
+		}
+
+
+                location /proxy_encrypted-tbn2_gstatic_com/ {
+                        proxy_set_header Accept-Encoding "";
+			proxy_pass https://encrypted-tbn2.gstatic.com/;
+                        proxy_hide_header Set-Cookie;
+			proxy_http_version 1.1;
+			proxy_buffering off;
+		}
+
+
+                location /proxy_encrypted-tbn3_gstatic_com/ {
+                        proxy_set_header Accept-Encoding "";
+			proxy_pass https://encrypted-tbn3.gstatic.com/;
+                        proxy_hide_header Set-Cookie;
+			proxy_http_version 1.1;
+			proxy_buffering off;
 		}
 
                 location /proxy_apis_google_com/ {
