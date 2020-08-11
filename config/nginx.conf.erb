@@ -21,7 +21,7 @@ http {
 		listen <%= ENV["PORT"] %>;
 		keepalive_timeout 5;
             
-                location /compressiontest/gzip.html {
+                location = /compressiontest/gzip.html {
                         return 403;
                 }
 
@@ -87,6 +87,7 @@ http {
 		}
 
                 location /proxy_ogs_google_com/ {
+                        rewrite googpxy.herokuapp.com www.google.com break;
                         proxy_set_header Accept-Encoding "";
 			proxy_pass https://ogs.google.com/;
                         proxy_hide_header Set-Cookie;
